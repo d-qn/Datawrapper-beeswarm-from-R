@@ -49,6 +49,6 @@ dfb %>% write_csv("beeswarm_data4datwwrapper.csv")
 ### 5. In datawrapper 
 # (a. Upload the data)
 # b. Create a scatter plot
-# c. Assign the y column to the horizontal axis, x column to the vertical axis
+# c. Assign the y column to the horizontal axis, x column to the vertical axis, see the screenshot "datawrapper_screenshot.png"
 # d. Tweak & enjoy
 

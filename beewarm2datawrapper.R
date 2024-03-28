@@ -11,11 +11,12 @@ ddd <- read_csv("https://gist.githubusercontent.com/d-qn/5cff401873518297fb029b3
 
 ### 2. Compute/plot the beeswarwm
 
-# Beeswarm of the % yes vote `qValue` by language region `value`
-# There is a hack here to assign the id of the data `qId` to the color, 
+# Beeswarm of the % yes vote, `qValue`, by language region ,`value`.
+# - There is a hack here to assign the id of the data `qId` to the color, 
 # this will allow to join the computed beeswarm coordindates to the original data
-# In addition with getting the beeswarm coordinates, this will plot the beeswarm
-# Adjust the "cex" parameter to change the size of the points
+# - This hack is only useful to get more data to populate datawrapper's tooltip
+# - In addition with getting the beeswarm coordinates, this will plot the beeswarm
+# - Adjust the "cex" parameter to change the size of the points
 
 df_bees <- beeswarm(
   qValue ~ value,
@@ -29,6 +30,7 @@ df_bees <- beeswarm(
 rownames(df_bees) <- NULL
 
 ### 3. Join the computed beeswarm coordinates to the original data
+# - Optional step, this is only to get more data for datawrapper's tooltip
 
 dfb <- left_join(
   df_bees %>% select(x,y, x.orig, y.orig, col),
